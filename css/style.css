@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --cor_fundo-primaria: #F3F5FC;
+    --cor_fundo-secundaria: #0A3871;
+
+    --cor_fonte-primaria: #000000;
+    --cor_fonte-secundaria: #FFFFFF;
+
+    --cor_botao-primaria: #0A3871;
+    --cor_botao-secundaria: #CED4DA;
+}
+* {
+    margin: 0; 
+    padding: 0;
+}
+body {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 100vh;
+    background-color: var(--cor_fundo-primaria);
+    font-family: "Open Sans", sans-serif;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    color: var(--cor_fonte-primaria);
+}
+.conteudo > img {
+    width: 32px;
+    height: 48px;
+    margin: 30px;
+}
+.conteudo textarea {
+    width: 60%;
+    height: 50%;
+    margin: 0 auto;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.1rem;
+}
+.conteudo__mensagem {
+    height: 10%;
+    width: 60%;
+    margin: 3% auto;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: start;
+}
+.conteudo__mensagem > img {
+    width: 16px;
+    height: 16px;
+    margin: 3px 15px;
+}
+.conteudo__butoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+.conteudo__butoes button {
+    width: 45%;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--cor_botao-secundaria);
+}
+button:hover {
+    filter: brightness(90%);
+    transition: 0.2s ease;
+}
+.conteudo__butoes #criptografar {
+    background-color: var(--cor_botao-primaria);
+    color: var(--cor_fonte-secundaria);
+}
+
+.resultado {
+    padding: 0 14%;
+    border-radius: 24px 0 0 24px;
+    color: var(--cor_fonte-secundaria);
+    background-color: var(--cor_fundo-secundaria);
+    overflow: hidden;
+}
+.resultado__mensagem {
+    flex-direction: column;
+    display: none;  /*alterado em js |-> flex|*/
+}
+.resultado__mensagem span {
+    height: 82vh;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.resultado__mensagem button {
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--cor_botao-secundaria);
+}
+.resultado__vazio {
+    height: 100%;
+    margin: auto;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.resultado__vazio h2 {
+    margin: 12px 0;
+    font-size: 1.45rem;
+}
+.resultado__vazio p { font-size: 0.95rem; }
+
+/*---------------------------  MOBILE AND TABLET COMUM SETINGS ------------------------------*/
+@media screen and (max-width: 1024px){
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100vh auto;
+    }
+    .conteudo textarea {
+        width: 80%;
+    }
+    .conteudo__mensagem {
+        margin: 11% auto;
+        width: 90vw;
+        font-size: 0.8rem;
+    }
+    .conteudo__butoes {
+        flex-direction: column;
+        width: 90vw;
+        height: 110px;
+    }
+    .conteudo__butoes button {
+        width: 100%;
+        padding: 15px 0;
+    }
+    .resultado {
+        margin-top: 5%;
+        border-radius: 24px;
+    }
+    .resultado__mensagem, .resultado__vazio {
+        height: 100%;
+    }
+    .resultado__mensagem span {
+        height: 80%;
+    }
+    .resultado__mensagem button {
+        margin-bottom: 15%;
+        padding: 5px 0;
+    }
+    .resultado__vazio {
+        height: 100%;
+        padding-bottom: 15%;
+    }
+    .resultado__vazio > img {
+        width: 0%;
+        display: none;
+    }
+}
+
+/*------------------------------ MOBILE LANDSCAPE SETINGS ---------------------*/
+@media screen and (orientation: landscape) and (max-height: 500px){
+    body {
+        grid-template-rows: 500px auto;
+    }
+    .conteudo__butoes {
+        height: 90px;
+        flex-direction: row;
+    }
+    .conteudo__butoes button {
+        width: 48%;
+    }
+    .resultado__mensagem button {
+        padding: 16px 0;
+    }
+}
+
+/*------------------------------- TABLET SETINGS ------------------------------*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .conteudo textarea {
+        width: 65%;
+    }
+    .conteudo__mensagem {
+       margin: 20% auto 5% auto;
+       font-size: 1rem;
+    }
+    .conteudo__butoes {
+        height: 65px;
+        flex-direction: row;
+    }
+    .conteudo__butoes button {
+        width: 48%;
+    }
+}
