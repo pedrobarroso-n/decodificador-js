@@ -1,5 +1,4 @@
 <h1 style="text-align:center">Decodificador Js</h1>
-<img src="" alt="Imagem do projeto"/>
 <h3>📋 Sobre o Projeto</h3>
 <p style="margin-left: 40px;">
 O projeto tem como objetivo criar um decodificador de mensagens em JavaScript, onde o usuário pode inserir uma mensagem qualquer e recebe-la "criptografada", o mesmo pode tambem pegar o texto criptografado e descriptografa-lo para ter devolta o original.
